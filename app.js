@@ -1,6 +1,7 @@
 const app = require("./config/server");
-const port = 9001;
+require("dotenv").config();
+const config = require("./config");
 
-app.listen(port, function () {
-  console.log("Server up on port " + port);
+app.listen(config.app.PORT, function () {
+  console.log("Server up on port " + config.app.PORT);
 });

@@ -13,13 +13,16 @@ module.exports = {
   },
 
   async addProduct(req, res) {
-    const { title, price, description, category, image } = req.body;
+    const { title, price, discount, description, category, image } = req.body;
+
     const product = await Product.create({
       title,
       price,
+      discount,
       description,
       category,
       image,
+
     });
     res.json(product);
   },

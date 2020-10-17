@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost:27017/my-store";
+require("dotenv").config();
+const config = require("./index");
+
+const url = config.db.connectionString;
 
 const options = {
   useNewUrlParser: true,
